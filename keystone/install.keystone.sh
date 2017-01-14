@@ -3,8 +3,11 @@
 
 
 #
-yum remove -y MariaDB-shared
-yum remove -y MariaDB-common
+yum -y remove MariaDB-shared
+yum -y remove MariaDB-common
+
+# Transaction check error: package mariadb-libs
+yum -y remove mariadb-libs
 
 #
 yum -y install mariadb mariadb-server MySQL-python
