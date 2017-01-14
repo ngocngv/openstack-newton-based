@@ -17,11 +17,13 @@ yum -y install mariadb mariadb-server python2-PyMySQL
 
 mysql -u root -p
 
-CREATE DATABASE keystone;
-GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE_DBPASS';
-GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBPASS';
-  
-  
+CREATE DATABASE keystone default character set utf8;
+GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE_DBPASS' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBPASS' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+
   
   
 yum -y install openstack-keystone httpd mod_wsgi
