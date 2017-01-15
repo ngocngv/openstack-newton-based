@@ -32,6 +32,33 @@ yum -y install openstack-keystone httpd mod_wsgi
   
   
   
+# Populate the Identity service database:
+su -s /bin/sh -c "keystone-manage db_sync" keystone
   
   
-  
+
+# Initialize Fernet key repositories:
+keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
+keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
+
+
+# Bootstrap the Identity service:
+keystone-manage bootstrap --bootstrap-password ADMIN_PASS \
+  --bootstrap-admin-url http://controller:35357/v3/ \
+  --bootstrap-internal-url http://controller:35357/v3/ \
+  --bootstrap-public-url http://controller:5000/v3/ \
+  --bootstrap-region-id RegionOne
+
+
+
+
+
+
+
+
+
+
+
+
+
+
