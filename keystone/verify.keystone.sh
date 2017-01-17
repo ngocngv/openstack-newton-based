@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Verifying keystone
+
 
 # unset OS_AUTH_URL OS_PASSWORD
 
@@ -18,4 +20,6 @@ openstack --os-auth-url http://ctl01:5000/v3 \
 
 
 
+# Request an authentication token:
+openstack token issue
 
