@@ -14,6 +14,8 @@ yum -y install mariadb mariadb-server MySQL-python
 yum -y install mariadb mariadb-server python2-PyMySQL
 
 
+# Create DB
+#---------------------------------------------------------------------------------
 
 mysql -u root -p
 
@@ -23,6 +25,9 @@ GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBP
 FLUSH PRIVILEGES;
 
 
+# CREATE DATABASE keystone.db;
+# GRANT ALL PRIVILEGES ON keystone.db.* TO 'keystone.user'@'127.0.0.1' IDENTIFIED BY 'keystone.dbpasswd';
+# GRANT ALL PRIVILEGES ON keystone.db.* TO 'keystone.user'@'%' IDENTIFIED BY 'keystone.dbpasswd';
 
   
   
