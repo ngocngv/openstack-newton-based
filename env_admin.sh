@@ -3,10 +3,10 @@
 # unset OS_AUTH_URL OS_PASSWORD
 
 #export OS_AUTH_URL=http://identity.openstack.cluster:30080/v3
-#export OS_AUTH_URL=http://ctl01:35357/v3
+export OS_AUTH_URL=http://ctl01:35357/v3
 
 export OS_USERNAME=admin
-#export OS_PASSWORD=admin
+export OS_PASSWORD=admin
 
 #export OS_USER_DOMAIN_ID=default
 export OS_USER_DOMAIN_NAME=Default
@@ -22,3 +22,5 @@ export OS_INTERFACE=public
 
 #export OS_VOLUME_API_VERSION=2
 export OS_IDENTITY_API_VERSION=3
+
+export OS_IMAGE_API_VERSION=2
